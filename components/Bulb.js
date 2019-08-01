@@ -7,7 +7,7 @@ export default class Bulb extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            opacity: 0.1,
+            opacity: 0.7,
             order: true
         }
             
@@ -17,14 +17,14 @@ export default class Bulb extends React.Component {
     }
        
     flashLight = () => {
-        if (this.state.opacity <= 0 || this.state.opacity >= 2.) { this.setState({order: !this.state.order})}
+        if (this.state.opacity <= 0.3 || this.state.opacity >= 2.) { this.setState({order: !this.state.order})}
         if ( this.state.order) {
-            console.log("flash: " + this.state.opacity)
+            //console.log("flash: " + this.state.opacity)
             this.setState({
                 opacity: this.state.opacity + 0.1
             })
         } else {
-            console.log("flash: " + this.state.opacity)
+            //console.log("flash: " + this.state.opacity)
             this.setState({
                 opacity: this.state.opacity - 0.1
             })
@@ -43,7 +43,7 @@ export default class Bulb extends React.Component {
     }
     render() {
         return (
-            <Light style={{...this.props.style, ...this.state}}/>
+            <Light style={{...this.state}}/>
         );
     }
 }
