@@ -16,13 +16,13 @@ export default class Rope extends React.Component {
         }
         return this.state.arr.map((data, i ) => {
             return (
-                <View style={{...this.props.style}} key={i}>{data}</View>
+                <View key={i}>{data}</View>
             )
         })
     }
     render() {
         return (
-            <View>{this.populateArray()}</View>
+            <View style={{...this.props.style}}>{this.populateArray()}</View>
         );
     }
 }
