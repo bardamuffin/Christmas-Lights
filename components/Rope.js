@@ -9,7 +9,8 @@ export default class Rope extends React.Component {
         //TODO: error, the initial array are not modified by populate array (obvs because it just does .push())
         this.state = { arr: new Array(7), }
     }
-        
+    
+    //return true if val modulo 2 = 0
     isOdd = val => {
         return val % 2
     }
