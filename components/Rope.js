@@ -1,18 +1,22 @@
 import React from 'react';
-import { View, StyleSheet, } from 'react-native';
+import { View } from 'react-native';
 import Bulb from './Bulb';
+let colors = ["crimson", "darkorange", "yellow", "springgreen", "darkturquoise", "darkblue", "blueviolet", "red"]
 
 export default class Rope extends React.Component {
     constructor(props) {
         super(props);
+        //TODO: error, the initial array are not modified by populate array (obvs because it just does .push())
         this.state = { arr: new Array(7), }
-         
-
     }
-
+        
+    isOdd = val => {
+        return val % 2
+    }
     populateArray = () => {
         for ( let i = 0; i <= 7; i++) {
-            this.state.arr.push(<Bulb/>)
+            //set ascendant if I is pair
+            this.state.arr.push(<Bulb id={i} ascendant={this.isOdd(i)} colorCircle={colors[i]} />)
         }
         return this.state.arr.map((data, i ) => {
             return (

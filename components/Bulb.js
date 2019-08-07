@@ -1,14 +1,15 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import Light from './Light';
-//import console = require('console');
 
 export default class Bulb extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             opacity: 0.7,
-            order: true
+            order: this.props.ascendant,
+            id: this.props.id,
+            backgroundColor: this.props.colorCircle
         }
             
 
@@ -17,30 +18,19 @@ export default class Bulb extends React.Component {
     }
        
     flashLight = () => {
-        if (this.state.opacity <= 0.3 || this.state.opacity >= 2.) { this.setState({order: !this.state.order})}
+        if (this.state.opacity <= 0.5 || this.state.opacity >= 0.9) { this.setState({order: !this.state.order})}
         if ( this.state.order) {
-            //console.log("flash: " + this.state.opacity)
             this.setState({
                 opacity: this.state.opacity + 0.1
             })
         } else {
-            //console.log("flash: " + this.state.opacity)
             this.setState({
                 opacity: this.state.opacity - 0.1
             })
         }
 
         }
-                   
 
-    //Start a timer
-    startTimer = () => {
-
-    }
-    //Stop the timer
-    stopTimer = () => {
-
-    }
     render() {
         return (
             <Light style={{...this.state}}/>
