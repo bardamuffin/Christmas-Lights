@@ -1,4 +1,4 @@
-packager-info.json
+packager-info.json*
 # Logs
 logs
 *.log
@@ -60,5 +60,6 @@ typings/
 
 # next.js build output
 .next
+.expo/packager-info.json
 .expo/packager-info.json
 .expo/packager-info.json
