@@ -10,7 +10,7 @@ export default class LightScreen extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Rope style={styles.container}/>
+                <Rope style={styles.container} play={this.props.play}/>
             </View>
         );
     }
@@ -18,5 +18,12 @@ export default class LightScreen extends React.Component {
                 
 
 const styles = StyleSheet.create({
-    container: { flex: 1, flexDirection: "row", paddingTop: 50, padding: 20, justifyContent: "space-between", backgroundColor: "black"},
+    container: { 
+        flex: 1, 
+        flexDirection: "row", 
+        paddingTop: 50, 
+        padding: 20, 
+        justifyContent: "space-between", 
+        backgroundColor: "black"
+    },
 });
