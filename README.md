@@ -25,7 +25,7 @@ displayed during the Christmas Holidays.
 ## TASKS
 
 - ScreenIntervalIntensity
-- ScreenRopeDetails // specify the number of row     
+- ScreenRopeDetails // specify the number of row +     
 - ModalbulbDetails:
     - ColorPicker
     - sizeChanger
