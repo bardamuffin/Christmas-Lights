@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import LightScreen from './screens/LightScreen.js';
 import Control from './screens/Control';
 import ControlIntensity from './screens/ControlIntensity.js';
+import ScreenRopeDetails from './screens/ScreenRopeDetails';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -21,8 +22,9 @@ export default class App extends React.Component {
     return (
       <View style={{flex: 1}}>
         <LightScreen play={this.state.play} />
-        <View style={{flex: 1}}>
+        <View style={{flex: 1, flexDirection: "row",  }}>
           <ControlIntensity />
+          <ScreenRopeDetails />
         </View>
         <Control activateTimer={this.handleActivateTimer}/>
       </View>
