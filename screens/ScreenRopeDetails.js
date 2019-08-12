@@ -9,8 +9,8 @@ export default class ScreenRopeDetails extends React.Component {
             <View style={styles.container}>
                 <View style={styles.pickerContainer}>
                     <Text style={styles.label}>Rope</Text>
-                    <Picker style={styles.picker}>
-                        <Picker.Item label="1" value="1" />
+                    <Picker style={styles.picker} >
+                        <Picker.Item style={{flex: 1, backgroundColor: "cyan", justifyContent: "center", alignItems: "center"}} label="1" value="1" />
                         <Picker.Item label="2" value="2" />
                         <Picker.Item label="3" value="3" />
                     </Picker>
@@ -27,7 +27,9 @@ const styles = StyleSheet.create({
         backgroundColor: "black",
         alignItems: "center",
         justifyContent: "center",
-        color: "#33691E"
+        color: "#33691E",
+        borderColor: "#33691E",
+        borderWidth: 1,
     },
     label: {
         fontSize: 24,
@@ -35,17 +37,18 @@ const styles = StyleSheet.create({
         color: "#33691E"
     },
     picker: {
-        width: 100,
+        width: "50%",
+        height: "50%",
         color: "#33691E",
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+        textAlign: "center",
+        backgroundColor: "black"
     },
     pickerContainer: {
         width: "50%",
         height: "50%",
         alignItems: "center",
         justifyContent: "center",
-        borderColor: "#33691E",
-        //borderWidth: 6,
     }    
 })
