@@ -9,7 +9,10 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { play: false}
+    this.state = { 
+      play: false,
+      rowNbr: "2",
+    }
   }
   
   handleActivateTimer= () => {
@@ -18,13 +21,20 @@ export default class App extends React.Component {
       play: !this.state.play
     })
   }
+  handleRowNumber = val => {
+    console.log("App received rowNbr: ", val, " is typeof: ", typeof val)
+    this.setState({
+      rowNbr: val
+    })
+  }
+  
   render() {
     return (
       <View style={{flex: 1}}>
         <LightScreen play={this.state.play} />
         <View style={{flex: 1, flexDirection: "row",  }}>
           <ScreenControlIntensity />
-          <ScreenRopeDetails />
+          <ScreenRopeDetails updateRowNumber={this.handleRowNumber} rowNbr={this.state.rowNbr} />
         </View>
         <Control activateTimer={this.handleActivateTimer}/>
       </View>
