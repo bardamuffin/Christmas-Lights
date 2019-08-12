@@ -19,10 +19,10 @@ export default class ControlIntensity extends React.Component {
         return (
             <View style={styles.container}>
                 <View style={styles.inputContainer}>
-                    <Text style={styles.label}>Opacity</Text>
+                    <Text style={styles.label}>MinOpacity</Text>
                     <Text style={styles.valueStart}>0</Text>
                     <Slider
-                        style={{width: 200, height: 40, margin: 10}}
+                        style={styles.slider}
                         minimumValue={0}
                         maximumValue={1}
                         value={this.state.pickerValue}
@@ -32,10 +32,10 @@ export default class ControlIntensity extends React.Component {
                 </View>
                 
             <View style={styles.inputContainer}>
-            <Text style={styles.label}>Opacity</Text>
+            <Text style={styles.label}>MaxOpacity</Text>
             <Text style={styles.valueStart}>0</Text>
             <Slider
-                style={{width: 200, height: 40, margin: 10, paddingLeft: 40}}
+                style={styles.slider}
                 minimumValue={0}
                 maximumValue={1}
                 value={1}
@@ -68,6 +68,13 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         color: "#33691E",
         borderColor: "#33691E",
-        //borderWidth: 6,    
+        borderWidth: 1,    
+    },
+    slider: {
+        width: 100, 
+        height: 40, 
+        borderColor: "red",
+        borderWidth: 1,
+        //margin: 10
     },
 })
