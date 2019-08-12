@@ -38,6 +38,10 @@ export default class ScreenRopeDetails extends React.Component {
                         <Picker.Item label="1" value="1" />
                         <Picker.Item label="2" value="2" />
                         <Picker.Item label="3" value="3" />
+                        <Picker.Item label="3" value="4" />
+                        <Picker.Item label="3" value="5" />
+                        <Picker.Item label="3" value="6" />
+                        <Picker.Item label="3" value="7" />
                     </Picker>
                 </View>
             </View>

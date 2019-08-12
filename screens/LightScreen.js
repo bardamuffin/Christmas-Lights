@@ -10,7 +10,7 @@ export default class LightScreen extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Rope style={styles.container} play={this.props.play}/>
+                <Rope style={styles.container} rowNbr={this.props.rowNbr} play={this.props.play}/>
             </View>
         );
     }

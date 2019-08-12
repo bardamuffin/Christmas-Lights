@@ -11,7 +11,7 @@ export default class App extends React.Component {
 
     this.state = { 
       play: false,
-      rowNbr: "2",
+      rowNbr: 2,
     }
   }
   
@@ -24,14 +24,14 @@ export default class App extends React.Component {
   handleRowNumber = val => {
     console.log("App received rowNbr: ", val, " is typeof: ", typeof val)
     this.setState({
-      rowNbr: val
+      rowNbr: Number(val)
     })
   }
   
   render() {
     return (
       <View style={{flex: 1}}>
-        <LightScreen play={this.state.play} />
+        <LightScreen play={this.state.play} rowNbr={this.state.rowNbr} />
         <View style={{flex: 1, flexDirection: "row",  }}>
           <ScreenControlIntensity />
           <ScreenRopeDetails updateRowNumber={this.handleRowNumber} rowNbr={this.state.rowNbr} />
