@@ -8,7 +8,7 @@ export default class ScreenRopeDetails extends React.Component {
         return (
             <View style={styles.container}>
                 <View style={styles.pickerContainer}>
-                    <Text style={styles.label}>Rope:</Text>
+                    <Text style={styles.label}>Rope</Text>
                     <Picker style={styles.picker}>
                         <Picker.Item label="1" value="1" />
                         <Picker.Item label="2" value="2" />
@@ -36,7 +36,9 @@ const styles = StyleSheet.create({
     },
     picker: {
         width: 100,
-        color: "#33691E"
+        color: "#33691E",
+        justifyContent: "center",
+        alignItems: "center"
     },
     pickerContainer: {
         width: "50%",
@@ -44,6 +46,6 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
         borderColor: "#33691E",
-        borderWidth: 6,
+        //borderWidth: 6,
     }    
 })
