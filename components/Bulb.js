@@ -15,12 +15,12 @@ export default class Bulb extends React.Component {
     }
     
     componentDidMount(prevState, nextState) {
-        console.log("did Mount");
+        //console.log("did Mount");
         if (this.props.play) { 
-            console.log("play");
+            //console.log("play");
             this.playButton() 
         } else { 
-            console.log("STOP"); 
+            //console.log("STOP"); 
             this.stopButton() 
         }
     }
@@ -35,7 +35,7 @@ export default class Bulb extends React.Component {
     }
     //Start the lights
     playButton = () =>  {
-        console.log("PLAY")
+        //console.log("PLAY")
         this.nIntervId = setInterval(this.flashLight, 100)
     }
        

@@ -6,8 +6,7 @@ let colors = ["crimson", "darkorange", "yellow", "springgreen", "darkturquoise",
 export default class Rope extends React.Component {
     constructor(props) {
         super(props);
-        //TODO: error, the initial array are not modified by populate array (obvs because it just does .push())
-        this.state = { arr: [], rowNbr: this.props.rowNbr }
+        this.state = { arr: []}
     }
     
     //return true if val modulo 2 = 0
@@ -22,19 +21,16 @@ export default class Rope extends React.Component {
     }
     //Create Bulbs at initialization
     componentWillMount() {
-        console.log("Will mount:, ", this.state.rowNbr * 7)
-        this.populateArray(this.props.rowNbr)
+        this.populateArray()
     }
 
     populateArray = () => {
-        console.log("populating")
         let list= [];
         for (let i = 0; i <= 7; i++) {
             list.push(0)
         }
         //idea: maybe map around an array of container then map the views
         list = list.map((item, index) => {
-            console.log("test")
             return (
             item =
             <View key ={index}><Bulb 
@@ -54,9 +50,9 @@ export default class Rope extends React.Component {
        })
     }
     render() {
-        console.log("       RENDERING ROPE          ")
+        console.log("       RENDERING: Rope          ")
         return (
-            <View style={{...this.props.style}}>
+            <View style={{flex: 1, flexDirection: "row", justifyContent: "space-between"}}>
             {this.state.arr.map((item, index) => { return (item)} )}</View>
         );
     }

@@ -11,7 +11,7 @@ export default class App extends React.Component {
 
     this.state = { 
       play: false,
-      rowNbr: 2,
+      rowNbr: 1,
     }
   }
   
@@ -22,7 +22,7 @@ export default class App extends React.Component {
     })
   }
   handleRowNumber = val => {
-    console.log("App received rowNbr: ", val, " is typeof: ", typeof val)
+    //console.log("App received rowNbr: ", val, " is typeof: ", typeof val)
     this.setState({
       rowNbr: Number(val)
     })
