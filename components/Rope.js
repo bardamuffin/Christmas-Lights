@@ -6,8 +6,7 @@ let colors = ["crimson", "darkorange", "yellow", "springgreen", "darkturquoise",
 export default class Rope extends React.Component {
     constructor(props) {
         super(props);
-        //TODO: error, the initial array are not modified by populate array (obvs because it just does .push())
-        this.state = { arr: [] }
+        this.state = { arr: []}
     }
     
     //return true if val modulo 2 = 0
@@ -26,19 +25,20 @@ export default class Rope extends React.Component {
     }
 
     populateArray = () => {
-        console.log("populating")
         let list= [];
         for (let i = 0; i <= 7; i++) {
             list.push(0)
         }
-
+        //idea: maybe map around an array of container then map the views
         list = list.map((item, index) => {
-           return (
+            return (
             item =
             <View key ={index}><Bulb 
                 id={index} 
                 ascendant={this.isOdd(index)} 
+                //Error when > 7 out of range of the colorcircle array
                 colorCircle={colors[index]} 
+                //colorCircle={"red"}
                 play={this.props.play} 
                 />
             </View>
@@ -50,9 +50,9 @@ export default class Rope extends React.Component {
        })
     }
     render() {
-        console.log("       RENDERING ROPE          ")
+        console.log("       RENDERING: Rope          ")
         return (
-            <View style={{...this.props.style}}>
+            <View style={{flex: 1, flexDirection: "row", justifyContent: "space-between"}}>
             {this.state.arr.map((item, index) => { return (item)} )}</View>
         );
     }

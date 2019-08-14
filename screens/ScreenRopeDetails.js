@@ -3,16 +3,45 @@ import { StyleSheet, View, Picker, Text } from "react-native";
 import { Input } from 'react-native-elements';
 
 //Component to specify the number of Rope row
+//TODO: build it as a stateless components, only using props
 export default class ScreenRopeDetails extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            rowNbr: this.props.rowNbr.toString(),
+        }
+    }
+
+    onChangeItem = val => {
+        console.log("changed: ", val, " is typeof : ", typeof val)
+        this.setState({ rowNbr: val})
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        console.log("ControlRope Updated")
+        if (prevState.rowNbr !== this.state.rowNbr) {
+            console.log("ControlRopeupdate: " )
+            this.props.updateRowNumber(this.state.rowNbr)
+        }
+    }
+     
     render() {
         return (
             <View style={styles.container}>
                 <View style={styles.pickerContainer}>
                     <Text style={styles.label}>Rope</Text>
-                    <Picker style={styles.picker} >
-                        <Picker.Item style={{flex: 1, backgroundColor: "cyan", justifyContent: "center", alignItems: "center"}} label="1" value="1" />
+                    <Picker 
+                        style={styles.picker}
+                        selectedValue={this.state.rowNbr}
+                        onValueChange={(e) => this.onChangeItem(e)} 
+                    >
+                        <Picker.Item label="1" value="1" />
                         <Picker.Item label="2" value="2" />
                         <Picker.Item label="3" value="3" />
+                        <Picker.Item label="4" value="4" />
+                        <Picker.Item label="5" value="5" />
+                        <Picker.Item label="6" value="6" />
+                        <Picker.Item label="7" value="7" />
                     </Picker>
                 </View>
             </View>

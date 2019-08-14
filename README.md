@@ -36,6 +36,7 @@ displayed during the Christmas Holidays.
 -   [Sample Image](https://previews.123rf.com/images/whiterabbit/whiterabbit1003/whiterabbit100300020/6582600-seven-color-balls-red-orange-yellow-green-cyan-blue-and-magenta-in-a-row-on-a-white-background.jpg)
 -   [Adafruit LED Matrix](https://cdn-shop.adafruit.com/970x728/1487-02.jpg)
 
+- memory leak in rope because of the setIntervals: https://egghead.io/lessons/react-stop-memory-leaks-with-componentwillunmount-lifecycle-method-in-react
 ## Example projects
 
 [PureCSSChristmasLights](https://codepen.io/tobyj/pen/QjvEex)
